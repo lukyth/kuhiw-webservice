@@ -5,12 +5,9 @@ $app = new \Slim\Slim(array(
     'debug' => true
 ));
 
-$app->get('/:name', function ($name) {
-    echo "Hello, $name";
-});
-
-$app->get('/', function () {
-    echo "Hello, Kid";
-});
+$routes = glob('routes/*.php');
+foreach ($routes as $route) {
+    require $route;
+}
 
 $app->run();
