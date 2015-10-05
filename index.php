@@ -1,5 +1,7 @@
 <?php
+
 require 'vendor/autoload.php';
+require 'config.php';
 
 $app = new \Slim\Slim(array(
     'debug' => true
@@ -11,18 +13,3 @@ foreach ($routes as $route) {
 }
 
 $app->run();
-
-function getConnection() {
-    try {
-        $db_host = "Host";
-        $db_name = "Database name";
-        $db_port = "Port";
-        $db_user = "Username";
-        $db_password = "Password";
-        $conn = new PDO("mysql:host=$db_host;dbname=$db_name;dbport=$db_port", $db_user, $db_password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {
-        echo 'ERROR: ' . $e->getMessage();
-    }
-    return $conn;
-}

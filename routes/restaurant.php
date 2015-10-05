@@ -1,5 +1,7 @@
 <?php
 
+use lib\Core;
+
 $app->group('/restaurant', function () use ($app) {
 
     $app->get('/:id', function ($id) {
@@ -20,15 +22,13 @@ $app->group('/restaurant', function () use ($app) {
     $app->get('/owner/:id', function ($id) {
         $sql = "SELECT * FROM owners WHERE id=:id";
         try {
-            $db = getConnection();
-            $stmt = $db->prepare($sql);
+            $stmt = Core::getInstance()->dbh->prepare($sql);
             $stmt->bindParam("id", $id);
             $stmt->execute();
             $owner = $stmt->fetchObject();
-            $db = null;
             echo json_encode($owner);
         } catch(PDOException $e) {
-            echo '{"error":{"text":'. $e->getMessage() .'}}';
+            echo $e->getMessage();
         }
     });
 
