@@ -18,9 +18,18 @@ $app->group('/restaurant', function () use ($app) {
     });
 
     $app->get('/owner/:id', function ($id) {
-        echo json_encode([
-            'name' => 'owner_' . $id . '_name'
-        ]);
+        $sql = "SELECT * FROM owners WHERE id=:id";
+        try {
+            $db = getConnection();
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam("id", $id);
+            $stmt->execute();
+            $owner = $stmt->fetchObject();
+            $db = null;
+            echo json_encode($owner);
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
     });
 
 });
