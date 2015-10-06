@@ -5,11 +5,13 @@ namespace lib;
 use lib\Config;
 use PDO;
 
-class Core {
+class Core
+{
     public $dbh;
     private static $instance;
 
-    private function __construct() {
+    private function __construct()
+    {
         $dsn =  'mysql:host=' . Config::read('db.host') .
                 ';dbname='    . Config::read('db.name') .
                 ';port='      . Config::read('db.port') .
@@ -19,9 +21,9 @@ class Core {
         $this->dbh = new PDO($dsn, $user, $password);
         $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
-    public static function getInstance() {
-        if (!isset(self::$instance))
-        {
+    public static function getInstance()
+    {
+        if (!isset(self::$instance)) {
             $object = __CLASS__;
             self::$instance = new $object;
         }

@@ -1,9 +1,13 @@
 <?php
 
-$app->group('/hello', function () use ($app) {
+$app->group(
+    '/hello', function () use ($app) {
 
-    $app->get('/:name', function ($name) {
-        echo "Hello, $name";
-    });
+        $app->get(
+            '/:name', function ($name) {
+                echo "Hello, $name";
+            }
+        );
 
-});
+    }
+);

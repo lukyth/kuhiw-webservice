@@ -1,5 +1,7 @@
 <?php
 
-$app->get('/', function () use ($app) {
-    echo 'Hello, Kid!';
-});
+$app->get(
+    '/', function () use ($app) {
+        echo 'Hello, Kid!';
+    }
+);

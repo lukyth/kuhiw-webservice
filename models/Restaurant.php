@@ -5,16 +5,19 @@ namespace models;
 use lib\Core;
 use PDO;
 
-class Restaurant {
+class Restaurant
+{
 
     protected $core;
 
-    function __construct() {
+    function __construct()
+    {
         $this->core = Core::getInstance();
         $this->core->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    public function getRestaurant($id) {
+    public function getRestaurant($id)
+    {
         $sql = "SELECT * FROM restaurants WHERE id=:id";
         try {
             $stmt = $this->core->dbh->prepare($sql);
@@ -27,7 +30,8 @@ class Restaurant {
         }
     }
 
-    public function getRestaurants() {
+    public function getRestaurants()
+    {
         $sql = "SELECT * FROM restaurants";
         try {
             $stmt = $this->core->dbh->prepare($sql);
@@ -39,7 +43,8 @@ class Restaurant {
         }
     }
 
-    public function getRestaurantOwners($id) {
+    public function getRestaurantOwners($id)
+    {
         $sql = "SELECT * FROM owners WHERE restaurant_id=:id";
         try {
             $stmt = $this->core->dbh->prepare($sql);

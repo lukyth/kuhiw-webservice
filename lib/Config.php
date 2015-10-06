@@ -2,14 +2,17 @@
 
 namespace lib;
 
-class Config {
+class Config
+{
     static $config;
 
-    public static function read($name) {
+    public static function read($name)
+    {
         return self::$config[$name];
     }
 
-    public static function write($name, $value) {
+    public static function write($name, $value)
+    {
         self::$config[$name] = $value;
     }
 }
