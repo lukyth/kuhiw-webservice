@@ -1,6 +1,6 @@
 <?php
 
-class ProgrammerControllerTest extends \PHPUnit_Framework_TestCase
+class RestaurantTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testGetRestaurantShouldReturnAllRestaurantFields()
