@@ -1,0 +1,32 @@
+language: php
+
+php:
+  - 5.6
+  - 5.5
+  - 5.4
+
+# environment variable used in test suite
+env: TEST_ENVIRONMENT=travis
+
+# faster builds on new travis setup not using sudo
+sudo: false
+
+# cache vendor dirs
+cache:
+  directories:
+    - vendor
+
+before_install:
+  - mysql -e "create database IF NOT EXISTS kuhiw_test;" -u root
+  - mysql -u root kuhiw_test < database/kuhiw_test.sql
+
+# install dependencies
+install:
+  - composer install
+
+before_script:
+  - cp config.example.php config.php
+  - php -S localhost:8000 &
+  - until netstat -an 2>/dev/null | grep '8000.*LISTEN'; do true; done
+
+script: vendor/bin/phpunit
