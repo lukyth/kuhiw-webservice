@@ -1,12 +1,10 @@
 language: php
 
 php:
-  - 5.6
-  - 5.5
   - 5.4
 
-# environment variable used in test suite
-env: TEST_ENVIRONMENT=travis
+services:
+  - mysql
 
 # faster builds on new travis setup not using sudo
 sudo: false
@@ -27,6 +25,6 @@ install:
 before_script:
   - cp config.example.php config.php
   - php -S localhost:8000 &
-  - until netstat -an 2>/dev/null | grep '8000.*LISTEN'; do true; done
+  - sleep 3
 
 script: vendor/bin/phpunit
