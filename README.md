@@ -1,4 +1,4 @@
-# KUHiw web service  
+# KUHiw web service [![Build Status](https://travis-ci.org/lukyth/kuhiw-webservice.svg?branch=master)](https://travis-ci.org/lukyth/kuhiw-webservice)
 
 This project is an API web service for an Android application, [KUHiw](https://github.com/lukyth/kuhiw).
 
