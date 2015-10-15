@@ -10,9 +10,11 @@ class RestaurantTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(200, $response->getStatusCode());
 
-        $data = $response->json();
+        $array = $response->json();
 
-        $this->assertArrayHasKey('id', $data);
-        $this->assertArrayHasKey('name', $data);
+        foreach ($array as $obj) {
+            $this->assertArrayHasKey('id', $obj);
+            $this->assertArrayHasKey('name', $obj);
+        }
     }
 }
