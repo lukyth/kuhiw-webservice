@@ -2,33 +2,29 @@
 
 use models\Restaurant;
 
+$app->contentType('application/json');
+
 $app->group(
     '/restaurant', function () use ($app) {
 
         $app->get(
             '/', function () use ($app) {
                 $model = new Restaurant();
-                $restaurants = $model->getRestaurants();
-                $app->contentType('application/json');
-                echo json_encode($restaurants);
+                echo json_encode($model->getRestaurants());
             }
         );
 
         $app->get(
             '/:id', function ($id) use ($app) {
                 $model = new Restaurant();
-                $restaurant = $model->getRestaurant($id);
-                $app->contentType('application/json');
-                echo json_encode($restaurant);
+                echo json_encode($model->getRestaurant($id));
             }
         );
 
         $app->get(
             '/:id/owner', function ($id) use ($app) {
                 $model = new Restaurant();
-                $owners = $model->getRestaurantOwners($id);
-                $app->contentType('application/json');
-                echo json_encode($owners);
+                echo json_encode($model->getRestaurantOwners($id));
             }
         );
 
