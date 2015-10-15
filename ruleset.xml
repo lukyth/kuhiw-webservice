@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="KUHiw Standard">
+
+    <description>A KUHiw coding standard</description>
+
+    <file>.</file>
+
+    <exclude-pattern type="relative">tests/*</exclude-pattern>
+    <exclude-pattern type="relative">vendor/*</exclude-pattern>
+
+    <rule ref="PEAR">
+        <exclude name="PEAR.Commenting.FunctionComment"/>
+        <exclude name="PEAR.Commenting.ClassComment"/>
+        <exclude name="PEAR.Commenting.FileComment"/>
+    </rule>
+
+</ruleset>

@@ -8,7 +8,7 @@ use PDO;
 class Core
 {
     public $dbh;
-    private static $instance;
+    private static $_instance;
 
     private function __construct()
     {
@@ -23,10 +23,10 @@ class Core
     }
     public static function getInstance()
     {
-        if (!isset(self::$instance)) {
+        if (!isset(self::$_instance)) {
             $object = __CLASS__;
-            self::$instance = new $object;
+            self::$_instance = new $object;
         }
-        return self::$instance;
+        return self::$_instance;
     }
 }
