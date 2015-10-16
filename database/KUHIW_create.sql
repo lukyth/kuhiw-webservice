@@ -77,8 +77,6 @@ CREATE TABLE restaurants (
     description text  NOT NULL ,
     latitude decimal(9,6)  NOT NULL ,
     longitude decimal(9,6)  NOT NULL ,
-    open_at time  NOT NULL ,
-    close_at time  NOT NULL ,
     tel varchar(16)  NOT NULL ,
     created_at timestamp  NOT NULL ,
     updated_at timestamp  NOT NULL ,
