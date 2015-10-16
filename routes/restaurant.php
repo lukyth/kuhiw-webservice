@@ -10,21 +10,21 @@ $app->group(
         $app->get(
             '/', function () use ($app) {
                 $model = new Restaurant();
-                echo json_encode($model->getRestaurants());
+                echo json_encode($model->getRestaurants(), JSON_UNESCAPED_UNICODE);
             }
         );
 
         $app->get(
             '/:id', function ($id) use ($app) {
                 $model = new Restaurant();
-                echo json_encode($model->getRestaurant($id));
+                echo json_encode($model->getRestaurant($id), JSON_UNESCAPED_UNICODE);
             }
         );
 
         $app->get(
             '/:id/owner', function ($id) use ($app) {
                 $model = new Restaurant();
-                echo json_encode($model->getRestaurantOwners($id));
+                echo json_encode($model->getRestaurantOwners($id), JSON_UNESCAPED_UNICODE);
             }
         );
 
