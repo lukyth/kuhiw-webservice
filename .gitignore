@@ -3,3 +3,5 @@ composer.lock
 *.swp
 .DS_STORE
 config.php
+.phpintel/
+composer.phar
