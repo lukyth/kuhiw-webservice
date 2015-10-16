@@ -2,7 +2,7 @@
 
 use models\Restaurant;
 
-$app->contentType('application/json');
+$app->contentType('application/json; charset=utf-8');
 
 $app->group(
     '/restaurant', function () use ($app) {
