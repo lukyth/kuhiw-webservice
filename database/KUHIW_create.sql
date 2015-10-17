@@ -23,7 +23,6 @@ CREATE TABLE menus (
     id int  NOT NULL ,
     restaurant_id int  NOT NULL ,
     name varchar(255)  NOT NULL ,
-    description text  NOT NULL ,
     price_min decimal(8,2)  NOT NULL ,
     price_max decimal(8,2)  NOT NULL ,
     created_at timestamp  NOT NULL ,
@@ -87,7 +86,6 @@ CREATE TABLE restaurants (
 CREATE TABLE tags (
     id int  NOT NULL ,
     name varchar(64)  NOT NULL ,
-    description text  NOT NULL ,
     created_at timestamp  NOT NULL ,
     updated_at timestamp  NOT NULL ,
     CONSTRAINT tags_pk PRIMARY KEY (id)
