@@ -18,7 +18,7 @@ class Restaurant extends Model
 
     public function getRestaurants()
     {
-        return $this->query("SELECT * FROM restaurants");
+        return $this->query("SELECT * FROM restaurants WHERE name NOT LIKE 'NoBooth'");
     }
 
     public function getRestaurantOwners($id)
