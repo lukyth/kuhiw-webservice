@@ -24,8 +24,8 @@ CREATE TABLE menus (
     restaurant_id int  NOT NULL ,
     name varchar(255)  NOT NULL ,
     description text  NOT NULL ,
-    price decimal(8,2)  NOT NULL ,
-    picture_url varchar(128)  NOT NULL ,
+    price_min decimal(8,2)  NOT NULL ,
+    price_max decimal(8,2)  NOT NULL ,
     created_at timestamp  NOT NULL ,
     updated_at timestamp  NOT NULL ,
     CONSTRAINT menus_pk PRIMARY KEY (id)
@@ -58,7 +58,7 @@ CREATE TABLE rates (
 CREATE TABLE restaurant_pictures (
     id int  NOT NULL ,
     url varchar(255)  NOT NULL ,
-    restaurants_id int  NOT NULL ,
+    restaurant_id int  NOT NULL ,
     CONSTRAINT restaurant_pictures_pk PRIMARY KEY (id)
 );
 
