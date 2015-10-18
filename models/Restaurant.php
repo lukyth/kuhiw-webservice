@@ -38,4 +38,13 @@ class Restaurant extends Model
             )
         );
     }
+
+    public function getRestaurantComments($id)
+    {
+        return $this->query(
+            "SELECT * FROM comments,users WHERE restaurant_id=:id", array(
+            'id' => $id
+            )
+        );
+    }
 }
