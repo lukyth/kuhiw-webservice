@@ -30,18 +30,6 @@ CREATE TABLE menus (
     CONSTRAINT menus_pk PRIMARY KEY (id)
 );
 
--- Table owners
-CREATE TABLE owners (
-    id int  NOT NULL ,
-    restaurant_id int  NOT NULL ,
-    name varchar(255)  NOT NULL ,
-    description text  NOT NULL ,
-    picture_url varchar(128)  NOT NULL ,
-    created_at timestamp  NOT NULL ,
-    updated_at timestamp  NOT NULL ,
-    CONSTRAINT owners_pk PRIMARY KEY (id)
-);
-
 -- Table rates
 CREATE TABLE rates (
     id int  NOT NULL ,
