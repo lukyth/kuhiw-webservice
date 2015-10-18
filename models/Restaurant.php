@@ -30,4 +30,12 @@ class Restaurant extends Model
         );
     }
 
+    public function getRestaurantPictures($id)
+    {
+        return $this->query(
+            "SELECT * FROM restaurant_pictures WHERE restaurant_id=:id", array(
+            'id' => $id
+            )
+        );
+    }
 }

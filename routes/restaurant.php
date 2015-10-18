@@ -28,6 +28,13 @@ $app->group(
             }
         );
 
+        $app->get(
+            '/:id/pictures', function ($id) use ($app) {
+                $model = new Restaurant();
+                echo json_encode($model->getRestaurantPictures($id), JSON_UNESCAPED_UNICODE);
+            }
+        );
+
     }
 
 );
