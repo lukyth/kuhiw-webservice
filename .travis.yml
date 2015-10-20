@@ -36,10 +36,4 @@ env:
     - secure: DQR5gqCqPTI0Ns5rASMzIXr3XfULrHQQNR88huVEz0BMohuZ0Enei5j4g4PH35QeZs/SzIAj1inBdOt32jWz2IUoDTMGCs5vpVp9VBY2IWn3YChAPIrfOfA5HG3JAf6ZkM7uJVV25foClX72nIEn6XyBssdlOKLw9O6Ufz7x8cOv0+R41uVNSLrr+BtvxC9czwnQHOi8As5IxOyjyP3jxex8yHTBb7vhZwy4C0AxAU+yl3jQf8JGx+PTMKDCQXg6JoQnjhKGCexe0uDvJSDT1KffPvlJ+aEse9ShJj/hwHaVRwF0nce+5qxkTi5SdA4E5qXl1g3vVmYkebOhNwySntNweri/UdCS3QBG8eq9TRIVawxhVIDevP9Jv5UpKT4A/lPzAOUm+7GgdWaMhnXky3L+ia2y0E7czWRZ4my0x01koHBDSUKENSQSkG+kGNIX+B5cL3bQFZP8YrY/iOXBWQ2+jF8xyB0Wq3xiDsuHbFz7UOB6n0XwTH83gRwDCE4EgG32FCxiEELR+4pDGqpyifITR1RweJ7YM+2dbyjxNucSJ6gmfOgVd8kTf/VSngFia54ZVw91uRVafG/CFjl6M6lZZC6qRwrqByurqdUhooCtwy7U+zmtxYo7aKBtTdS8mPKw8MIQe4VxxEl+X63/2+2AmpMB9NQY167mMSwakIg=
 
 after_success:
-  - cd ..
-  - cp -R kuhiw-webservice kuhiw
-  - cd kuhiw
-  - rm -rf .git
-  - composer install --no-dev
-  - cd ..
-  - find kuhiw -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp:$BASE_URL{} \
+  "cd ..; ll -a; cp -R kuhiw-webservice kuhiw; ll -a; cd kuhiw; ll -a; rm -rf .git; ll -a; composer install --no-dev; ll -a; cd ..; ll -a; find kuhiw -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp:$BASE_URL{} \; ll -a;"
