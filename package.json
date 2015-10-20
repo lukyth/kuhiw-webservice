@@ -1,0 +1,27 @@
+{
+  "name": "kuhiw-webservice",
+  "version": "0.0.0",
+  "description": "This project is an API web service for an Android application, [KUHiw](https://github.com/lukyth/kuhiw).",
+  "main": "index.php",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukyth/kuhiw-webservice.git"
+  },
+  "author": "Kanitkorn Sujautra <k.sujautra@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukyth/kuhiw-webservice/issues"
+  },
+  "homepage": "https://github.com/lukyth/kuhiw-webservice#readme",
+  "devDependencies": {
+    "gulp-util": "^3.0.7",
+    "minimist": "^1.2.0",
+    "vinyl-ftp": "^0.4.5"
+  }
+}
