@@ -41,5 +41,5 @@ after_success:
   - cd kuhiw
   - rm -rf .git
   - composer install --no-dev
-  - cd ..
-  - find {.??,}* -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://$BASE_URL\{\} \;
+  - find .* -type f -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$BASE_URL\{\} \;
+  - find * -type f -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$BASE_URL\{\} \;
