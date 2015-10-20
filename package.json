@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/lukyth/kuhiw-webservice#readme",
   "devDependencies": {
+    "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
     "minimist": "^1.2.0",
     "vinyl-ftp": "^0.4.5"
