@@ -1,30 +1,22 @@
 language: php
-
 php:
-  - 5.4
-
+- 5.4
 services:
-  - mysql
-
-# faster builds on new travis setup not using sudo
+- mysql
 sudo: false
-
-# cache vendor dirs
 cache:
   directories:
-    - vendor
-
+  - vendor
 before_install:
-  - mysql -e "create database IF NOT EXISTS kuhiw_test;" -u root
-  - mysql -u root kuhiw_test < database/kuhiw_test.sql
-
-# install dependencies
+- mysql -e "create database IF NOT EXISTS kuhiw_test;" -u root
+- mysql -u root kuhiw_test < database/kuhiw_test.sql
 install:
-  - composer install
-
+- composer install
 before_script:
-  - cp config.example.php config.php
-  - php -S localhost:8000 &
-  - sleep 3
-
+- cp config.example.php config.php
+- php -S localhost:8000 &
+- sleep 3
 script: vendor/bin/phpunit
+notifications:
+  slack:
+    secure: MQafuxoQFBAfOQUtMvCCFXQACNe4+FoeCehjqAYXoRFU9nU/aYDOGo8OaKyNDHU3ZuSgXlTb8LmHHcMP3MVA9JanmL6WAXfXZQuihEoLYB+XvyLRwn1rEbZ29H6sVG6zWnPbsXQVaFZMxOwmkAFMC2mc7fq2USTwjybBS86SetIr+fg0L7IArx6otJZ8EP2PNv1M1hrrGMhAn9KuDWuze4aZRNj8gF6Mwo9X/hievEqSRaa/WIR6fFRJtJ6u87svs7Q3AOJWm2l8XONcNhe4DkGHzfKepo/aF2QWWjFawuaWZChCG25vcdR6tVtDS/+Upnjxoe3hp2H1qUYXrSGmC2EY3y9/7AbdOompEOzqG+ak6GGQPpAqKEnYhJQ+hu3r21815QWvLuBXbGVfZr1XoRRfDLalZvbD/OeN9oVAx0KonwrHKiKF2RBEz4LwZNTW4Ul/U6EXHxuLbwLn7cY57WJMlsVFTfncgOegFPtfErDyJC5X2k2mmhgZAuCXd5yf0PWsw42KeYHr17nLnm239ABpJ/0HKfgRUcgd1lxA9C9uu7Um5w3nJWGCkFShmj2r7gG4GAIXtAJG+o30a1oLdWDg2lx59DVvyU9j+he17K7rYfrC7/lj/OxbXBKqxYLRUzzQi3YWYXu7wAd7/yKadshbE8qpcQ43uSgwVXnwNp4=
