@@ -124,11 +124,6 @@ ALTER TABLE menus ADD CONSTRAINT menus_restaurants FOREIGN KEY menus_restaurants
 -- Reference:  owners_restaurants (table: owners)
 
 
-ALTER TABLE owners ADD CONSTRAINT owners_restaurants FOREIGN KEY owners_restaurants (restaurant_id)
-    REFERENCES restaurants (id);
--- Reference:  rates_restaurants (table: rates)
-
-
 ALTER TABLE rates ADD CONSTRAINT rates_restaurants FOREIGN KEY rates_restaurants (restaurant_id)
     REFERENCES restaurants (id);
 -- Reference:  rates_users (table: rates)
